@@ -402,7 +402,7 @@ func (client *Client) DlLimit() (dlLimit int, err error) {
 // SetDlLimit returns info you usually see in qBt status bar.
 func (client *Client) SetDlLimit(limit int) (set bool, err error) {
 	params := map[string]string{"limit": strconv.Itoa(limit)}
-	resp, err := client.get("api/v2/transfer/setDownloadLimit", params)
+	resp, err := client.post("api/v2/transfer/setDownloadLimit", params)
 	if err != nil {
 		return set, err
 	}
